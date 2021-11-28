@@ -19,6 +19,11 @@ class CreatePayrollTable extends Migration
             $table->string('pay_period');
             $table->integer('total_hours_worked');
             $table->integer('total_days_worked');
+            $table->integer('employee_leave');
+            $table->integer('ot');
+            $table->integer('holiday');
+            $table->integer('tmonth');
+            $table->integer('bonus');
             $table->integer('sss');
             $table->integer('philhealth');
             $table->integer('pagibig');

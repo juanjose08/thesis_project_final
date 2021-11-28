@@ -136,14 +136,24 @@ class EmployeeController extends Controller
         $daily_rate = $employee[0]->daily_rate;
         $hourly_rate = $daily_rate/8;
         $total_pay = $hourly_rate * $request->total_hours_worked;
+        $leave = (int)$request->employee_leave * $daily_rate;
+        $ot = $hourly_rate * $request->ot;
+        $tmonth = ($daily_rate * $request->tmonth) / 12;
+        $holiday = ($hourly_rate * $request->holiday);
         $total_deductions = (int)$request->sss + (int)$request->philhealth + (int)$request->pagibig + (int)$request->tax;
-        $net_pay = $total_pay - $total_deductions;
+        $net_pay = $total_pay - $total_deductions - $leave + $ot + $tmonth + $request->bonus + $holiday;
+
 
         $payroll = Payroll::create([
             'employee_id'        => $request->employee_id,
             'pay_period'         => $request->pay_period,
             'total_hours_worked' => $request->total_hours_worked,
             'total_days_worked'  => $request->total_days_worked,
+            'employee_leave'     => $request->employee_leave,
+            'ot'                 => $request->ot,
+            'holiday'            => $request->holiday,
+            'tmonth'             => $request->tmonth,
+            'bonus'              => $request->bonus,
             'sss'                => $request->sss,
             'philhealth'         => $request->philhealth,
             'pagibig'            => $request->pagibig,

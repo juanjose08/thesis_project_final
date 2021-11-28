@@ -22,6 +22,34 @@
                         <form action="{{ route('save-payroll') }}" method="post">
                             @csrf
                             <div class="container">
+                                <h4>Leave:</h4><br>
+                                <div class="row">
+                                    
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="employee_leave" class="control-label">Leave</label>
+                                        <input type="number" name="employee_leave" id="employee_leave" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="ot" class="control-label">Overtime</label>
+                                        <input step=".01" type="number" name="ot" id="ot" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="holiday" class="control-label">Holiday</label>
+                                        <input type="number" name="holiday" id="holiday" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="tmonth" class="control-label">13th Month</label>
+                                        <input type="number" name="tmonth" id="tmonth" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="bonus" class="control-label">Bonus</label>
+                                        <input step=".01" type="number" name="bonus" id="bonus" class="form-control">
+                                    </div>
+                                </div>
                                 <h4>Deductions:</h4><br>
                                 <div class="row">
                                     

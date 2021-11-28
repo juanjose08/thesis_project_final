@@ -49,6 +49,26 @@
                                     <td>{{ $data['payroll'][0]['total_pay'] }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Leave :</th>
+                                    <td>- {{ $data['payroll'][0]['employee_leave'] * $data['payroll'][0]['employee']['daily_rate'] }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Overtime :</th>
+                                    <td>+ {{ $data['payroll'][0]['ot'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Holiday :</th>
+                                    <td>+ {{ $data['payroll'][0]['holiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                </tr>
+                                <tr>
+                                    <th>13th Month Pay :</th>
+                                    <td>{{ ($data['payroll'][0]['tmonth'] * $data['payroll'][0]['employee']['daily_rate'])/12 }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Bonus :</th>
+                                    <td>{{ $data['payroll'][0]['bonus'] }}</td>
+                                </tr>
+                                <tr>
                                     <th>DEDUCTIONS</th>
                                     <td></td>
                                 </tr>
