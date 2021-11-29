@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    protected $fillable = ['patient_id','doctor_id','schedule_id','doctor_fee','total_amount','status','lab_fee'];
+    protected $fillable = ['patient_id','doctor_id','schedule_id','doctor_fee','total_amount','status','lab_fee','discount'];
 
     public function procedures(){
         return $this->belongsToMany('App\Procedure');

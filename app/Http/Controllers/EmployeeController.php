@@ -139,9 +139,10 @@ class EmployeeController extends Controller
         $leave = (int)$request->employee_leave * $daily_rate;
         $ot = $hourly_rate * $request->ot;
         $tmonth = ($daily_rate * $request->tmonth) / 12;
-        $holiday = ($hourly_rate * $request->holiday);
+        $rholiday = ($hourly_rate * $request->rholiday);
+        $sholiday = ($hourly_rate * $request->holiday) * .3;
         $total_deductions = (int)$request->sss + (int)$request->philhealth + (int)$request->pagibig + (int)$request->tax;
-        $net_pay = $total_pay - $total_deductions - $leave + $ot + $tmonth + $request->bonus + $holiday;
+        $net_pay = $total_pay - $total_deductions + $leave + $ot + $tmonth + $request->bonus + $rholiday + $sholiday;
 
 
         $payroll = Payroll::create([
@@ -151,7 +152,8 @@ class EmployeeController extends Controller
             'total_days_worked'  => $request->total_days_worked,
             'employee_leave'     => $request->employee_leave,
             'ot'                 => $request->ot,
-            'holiday'            => $request->holiday,
+            'rholiday'            => $request->rholiday,
+            'sholiday'            => $request->sholiday,
             'tmonth'             => $request->tmonth,
             'bonus'              => $request->bonus,
             'sss'                => $request->sss,

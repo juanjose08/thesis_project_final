@@ -48,17 +48,28 @@
                                     <th>Gross Pay :</th>
                                     <td>{{ $data['payroll'][0]['total_pay'] }}</td>
                                 </tr>
+
+                                <tr>
+                                    <th>EARNINGS</th>
+                                    <td></td>
+                                </tr>
+
                                 <tr>
                                     <th>Leave :</th>
-                                    <td>- {{ $data['payroll'][0]['employee_leave'] * $data['payroll'][0]['employee']['daily_rate'] }}</td>
+                                    <td>{{ $data['payroll'][0]['employee_leave'] * $data['payroll'][0]['employee']['daily_rate'] }}</td>
                                 </tr>
                                 <tr>
                                     <th>Overtime :</th>
-                                    <td>+ {{ $data['payroll'][0]['ot'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                    <td>{{ $data['payroll'][0]['ot'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Holiday :</th>
-                                    <td>+ {{ $data['payroll'][0]['holiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                    <th>Regular Holiday :</th>
+                                    <td>{{ $data['payroll'][0]['rholiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Special Holiday :</th>
+                                    <td>{{ ($data['payroll'][0]['sholiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) * .3) }}</td>
                                 </tr>
                                 <tr>
                                     <th>13th Month Pay :</th>

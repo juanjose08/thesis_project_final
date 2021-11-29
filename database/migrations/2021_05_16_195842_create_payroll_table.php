@@ -21,7 +21,8 @@ class CreatePayrollTable extends Migration
             $table->integer('total_days_worked');
             $table->integer('employee_leave');
             $table->integer('ot');
-            $table->integer('holiday');
+            $table->integer('rholiday');
+            $table->integer('sholiday');
             $table->integer('tmonth');
             $table->integer('bonus');
             $table->integer('sss');

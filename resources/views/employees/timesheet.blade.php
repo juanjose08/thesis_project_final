@@ -36,18 +36,23 @@
                                     </div>
 
                                     <div class="form-group col-lg-4 col-sm-4 col-md-4">
-                                        <label for="holiday" class="control-label">Holiday</label>
-                                        <input type="number" name="holiday" id="holiday" class="form-control" required>
+                                        <label for="rholiday" class="control-label">Regular Holiday</label>
+                                        <input type="number" name="rholiday" id="rholiday" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group col-lg-4 col-sm-4 col-md-4">
+                                        <label for="sholiday" class="control-label">Special Holiday</label>
+                                        <input type="number" name="sholiday" id="sholiday" class="form-control" required>
                                     </div>
                                     
                                     <div class="form-group col-lg-4 col-sm-4 col-md-4">
                                         <label for="tmonth" class="control-label">13th Month</label>
-                                        <input type="number" name="tmonth" id="tmonth" class="form-control">
+                                        <input type="number" name="tmonth" id="tmonth" class="form-control" required>
                                     </div>
 
                                     <div class="form-group col-lg-4 col-sm-4 col-md-4">
                                         <label for="bonus" class="control-label">Bonus</label>
-                                        <input step=".01" type="number" name="bonus" id="bonus" class="form-control">
+                                        <input step=".01" type="number" name="bonus" id="bonus" class="form-control" required>
                                     </div>
                                 </div>
                                 <h4>Deductions:</h4><br>
