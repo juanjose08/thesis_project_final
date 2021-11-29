@@ -66,7 +66,30 @@ class HomeController extends Controller
             return view('home')->with('data',$data);
         }else{
             
-            return view('home_otp');
+            if($account[0]->type == 1 || $account[0]->type == 3){
+                return view('home_otp');
+                
+            }else{
+                $user = User::where('id', Auth::user()->id)->with('usertype','usertype.permissions')->get();
+                $permissions = [];
+                foreach($user[0]->usertype->permissions as $permission)
+                {
+                    array_push($permissions, $permission->name);
+                }
+                
+                $data = array(
+                    'permissions' => $permissions,
+                    'user'        => $user
+                );
+
+                ActivityLog::create([
+                    'user_id' => Auth::user()->id,
+                    'activity' => 'Login'
+                ]);
+
+                return view('home')->with('data',$data);
+            }
+            
         }
     }
 
