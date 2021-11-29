@@ -22,7 +22,7 @@
                         <form action="{{ route('save-payroll') }}" method="post">
                             @csrf
                             <div class="container">
-                                <h4>Leave:</h4><br>
+                                <h4>Earnings:</h4><br>
                                 <div class="row">
                                     
                                     <div class="form-group col-lg-4 col-sm-4 col-md-4">

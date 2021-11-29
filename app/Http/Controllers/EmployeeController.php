@@ -139,8 +139,8 @@ class EmployeeController extends Controller
         $leave = (int)$request->employee_leave * $daily_rate;
         $ot = $hourly_rate * $request->ot;
         $tmonth = ($daily_rate * $request->tmonth) / 12;
-        $rholiday = ($hourly_rate * $request->rholiday);
-        $sholiday = ($hourly_rate * $request->holiday) * .3;
+        $rholiday = ($daily_rate * $request->rholiday);
+        $sholiday = ($daily_rate * $request->holiday) * .3;
         $total_deductions = (int)$request->sss + (int)$request->philhealth + (int)$request->pagibig + (int)$request->tax;
         $net_pay = $total_pay - $total_deductions + $leave + $ot + $tmonth + $request->bonus + $rholiday + $sholiday;
 
