@@ -64,12 +64,12 @@
                                 </tr>
                                 <tr>
                                     <th>Regular Holiday :</th>
-                                    <td>{{ $data['payroll'][0]['rholiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) }}</td>
+                                    <td>{{ $data['payroll'][0]['rholiday'] * ($data['payroll'][0]['employee']['daily_rate']) }}</td>
                                 </tr>
 
                                 <tr>
                                     <th>Special Holiday :</th>
-                                    <td>{{ ($data['payroll'][0]['sholiday'] * ($data['payroll'][0]['employee']['daily_rate'] / 8) * .3) }}</td>
+                                    <td>{{ ($data['payroll'][0]['sholiday'] * ($data['payroll'][0]['employee']['daily_rate']) * .3) }}</td>
                                 </tr>
                                 <tr>
                                     <th>13th Month Pay :</th>
